@@ -1,0 +1,138 @@
+<html>
+<head>
+  <title>Reset Password</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #2d6a4f, #1b4332);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      width: 100%;
+      max-width: 450px;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+    h2 {
+      color: green;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    p {
+      color: black;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    label {
+      font-size: 14px;
+      color: green;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+	input[type="password"]:focus {
+      border-color: green;
+      box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    }
+    .button-container {
+      margin-top: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: green;
+    }
+    .back-link {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .back-link a {
+      color: #2575fc;
+      text-decoration: none;
+    }
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Reset Your Password</h2>
+    <p>Enter your username, new password, and confirm your password below to reset it.</p>
+
+    <form>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="new-password">New Password</label>
+        <input type="password" id="new-password" name="new-password" placeholder="Enter a new password" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password" required>
+      </div>
+
+      <div class="button-container">
+        <button type="submit"formaction="file:///E:/lab/web/login.html#">Reset Password </button>
+      </div>
+    </form>
+
+    <div class="back-link">
+      <p>Remember your password? <a href="file:///E:/lab/web/login.html#">Go back to Login</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

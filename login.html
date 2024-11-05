@@ -1,0 +1,160 @@
+<html>
+<head><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 11px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .login-container p {
+            margin-bottom: 28px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #555;
+            
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: green;
+            outline: none;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 15px;
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;	
+            transition: background-color 0.4s ease;
+        }
+
+        .btn-login:hover {
+            background-color: #6a11cb;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2575fc;
+            
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+		
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
+        }
+	.footer1 {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #2575fc;
+            
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <p>Enter your user name and password</p>
+        
+        
+        <form id="loginForm"  method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+<div class="footer1">
+        <a href="file:///E:/lab/web/forgot.html" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Please fill in both fields.");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
