@@ -1,0 +1,33 @@
+<html>
+<head>
+<title> day</title>
+</head>
+<body>
+<h1> days</h1>
+<form name="frmck">
+enter a number 1-7
+<input type="text" name="day">
+<button type="submit" onclick="checkfun()">day</button>
+</form>
+<script>
+function checkfun()
+{
+var n,ans;
+n=Number(document.frmck.day.value);
+switch(n)
+{
+case 1:ans="sunday";break;
+case 2:ans="Monday";break;
+case 3:ans="Tuesday";break;
+case 4:ans="Wednesday";break;
+case 5:ans="Thirsday";break;
+case 6:ans="Friday";break;
+case 7:ans="Satarday";break;
+default:ans="invalid";
+}
+alert(ans);
+}
+</script>
+
+</body>
+</html>

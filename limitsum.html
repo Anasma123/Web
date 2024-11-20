@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Sum of Numbers up to a Given Limit</title>
+    <script>
+        function calculateSum() {
+            var limit = parseInt(document.getElementById("limit").value);
+            var sum = 0;
+            for (var i = 1; i <= limit; i++) {
+                sum += i;
+            }
+            alert("The sum of numbers from 1 to " + limit + " is: " + sum);
+        }
+    </script>
+</head>
+<body>
+    <h1>Sum of Numbers Up to Given Limit</h1>
+    <p>Enter a limit to calculate the sum of numbers from 1 to that limit:</p>
+    <input type="number" id="limit" placeholder="Enter a limit" />
+    <button onclick="calculateSum()">Calculate Sum</button>
+</body>
+</html>

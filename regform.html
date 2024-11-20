@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var age = document.getElementById("age").value;
+            var namePattern = /^[a-zA-Z ]+$/;
+            if (name == "" || !namePattern.test(name)) {
+                alert("Please enter a valid name (letters and spaces only).");
+                return false;
+            }
+
+         
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email == "" || !emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (password == "" || password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+           
+            if (age == "" || isNaN(age) || age < 22) {
+                alert("Please enter a valid age (must be greater than or equal to 22).");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form onsubmit="return validateForm()">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter your password"><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" placeholder="Enter your age"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

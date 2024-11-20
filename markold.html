@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Student Pass Checker</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pass Checker</h1>
+        <p>Enter the student's score:</p>
+        <input type="number" id="scoreInput" placeholder="Score " required>
+        <button onclick="checkPass()">Check Pass Status</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function checkPass() {
+            var score = document.getElementById("scoreInput").value;
+            var resultDiv = document.getElementById("result");
+            if (score === "") {
+                resultDiv.textContent = "Please enter a score.";
+                resultDiv.className = "result";
+                return;
+            }
+
+            score = parseFloat(score);
+
+            if (isNaN(score) || score < 0 || score > 100) {
+                resultDiv.textContent = "Please enter a valid score between 0 and 100.";
+                resultDiv.className = "result";
+                return;
+            }
+
+            if (score >= 50) {
+                resultDiv.textContent = "The student has passed!";
+                resultDiv.className = "result passed";
+            } else {
+                resultDiv.textContent = "The student has failed.";
+                resultDiv.className = "result failed";
+            }
+        }
+    </script>
+
+</body>
+</html>

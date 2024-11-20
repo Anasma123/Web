@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Generate Calendar</title>
+    <script>
+        function generateCalendar() {
+            var year = document.getElementById("yearInput").value;
+            year = parseInt(year);
+
+            if (isNaN(year) || year <= 0) {
+                alert("Please enter a valid year.");
+                return;
+            }
+
+            var months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            var daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            var calendarHTML = "";
+
+            for (var month = 0; month < 12; month++) {
+                calendarHTML += "<h2>" + months[month] + " " + year + "</h2>";
+                calendarHTML += "<table border='1' cellpadding='5' cellspacing='0'><tr>";
+
+            
+                for (var day = 0; day < 7; day++) {
+                    calendarHTML += "<th>" + daysOfWeek[day] + "</th>";
+                }
+                calendarHTML += "</tr><tr>";
+
+        
+                var firstDay = new Date(year, month, 1).getDay();
+                var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+                
+                var currentDay = 1;
+                var totalRows = Math.ceil((firstDay + daysInMonth) / 7);
+
+                for (var row = 0; row < totalRows; row++) {
+                  
+                    for (var col = 0; col < 7; col++) {
+                        if (row === 0 && col < firstDay) {
+                            calendarHTML += "<td></td>"; 
+                        } else if (currentDay <= daysInMonth) {
+                            calendarHTML += "<td>" + currentDay + "</td>";
+                            currentDay++;
+                        } else {
+                            calendarHTML += "<td></td>"; 
+                        }
+                    }
+
+                    calendarHTML += "</tr>";
+                }
+
+                calendarHTML += "</table>";
+            }
+
+            document.getElementById("calendar").innerHTML = calendarHTML;
+        }
+    </script>
+</head>
+<body>
+    <h1>Generate Calendar for a Year</h1>
+    <label for="yearInput">Enter Year:</label>
+    <input type="number" id="yearInput" placeholder="Enter year" min="1900">
+    <button onclick="generateCalendar()">Generate Calendar</button>
+
+    <div id="calendar"></div>
+</body>
+</html>

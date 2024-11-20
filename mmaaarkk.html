@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>mark</title>
+</head>
+<body>
+<h1>pass checker</h1>
+<p>enter the student mark</p>
+<input type="number" id="scoreInput" placeholder="enter the score" required >
+<button onclick="checkPass()" >check pass or not</button>
+<script>
+function checkPass() {
+var score = document.getElementById("scoreInput").value;
+if (score === "") {
+alert ('Please enter a score')
+return;
+}
+if (score < 0 || score > 100) {
+alert ('Please enter a valid score between 0 and 100')
+return;
+}
+ if (score >= 50) {
+alert ('The student has passed')
+} else {
+alert ('The student has failed')
+}
+}
+</script>
+</body>
+</html>
