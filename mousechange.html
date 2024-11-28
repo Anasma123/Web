@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Display New Image and Text on Hover</title>
+</head>
+<body>
+
+    <div id="content">
+        Hover over this box
+    </div>
+
+    <div id="newContent" style="display:none;">
+        <img id="newImage" src="https://media.istockphoto.com/id/1473666403/photo/deep-forest-waterfall-in-thailand-erawan-waterfall-national-park-kanjanaburi-thailand.jpg?s=612x612&w=is&k=20&c=7moXVCePTfO0yPfhYeYNRwkwm47sshAh-aSkJ0PloV0=" alt="New Image">
+      </div>
+    </div>
+
+<div id="text">
+Here is the  text
+</div>
+
+<div id="imggg" >
+<img src="https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=">
+</div>
+
+    <script>
+        const content = document.getElementById('content');
+        const newContent = document.getElementById('newContent');
+
+const text = document.getElementById('text');
+const imggg = document.getElementById('imggg');
+
+
+
+imggg.addEventListener('mouseover', function() {
+            imggg.style.display = 'block';alert("you click me")
+
+});
+        content.addEventListener('mouseover', function() {
+            newContent.style.display = 'block';
+
+        });
+        
+        content.addEventListener('mouseleave', function() {
+            newContent.style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
