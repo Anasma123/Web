@@ -1,0 +1,41 @@
+<?php
+$totalAmount = 0;
+$units = 0;
+$ratePerUnit = 5;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $units = $_POST['units'];
+
+    if ($units <= 100) {
+        $totalAmount = $units * $ratePerUnit;
+    } elseif ($units <= 200) {
+        $totalAmount = 100 * $ratePerUnit + ($units - 100) * ($ratePerUnit * 1.5);
+    } else {
+        $totalAmount = 100 * $ratePerUnit + 100 * ($ratePerUnit * 1.5) + ($units - 200) * ($ratePerUnit * 2);
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+</head>
+<body>
+
+<h2>Electricity Bill Calculator</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <label for="units">Enter Units Consumed:</label>
+    <input type="number" name="units" value="<?php echo $units;?>" required>
+    <br><br>
+    <input type="submit" value="Calculate Bill">
+</form>
+
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST"): ?>
+    <h3>Total Amount: ₹<?php echo $totalAmount; ?></h3>
+<?php endif; ?>
+
+</body>
+</html>
