@@ -1,0 +1,15 @@
+<?php
+echo "Enter a number: ";
+$num = (int)trim(fgets(STDIN));
+$sum = 0;
+$temp = $num;
+$digits = strlen((string)$num);
+
+while ($temp > 0) {
+    $rem = $temp % 10;
+    $sum += $rem ** $digits;
+    $temp = (int)($temp / 10);
+}
+
+echo $sum == $num ? "$num is an Armstrong number." : "$num is not an Armstrong number.";
+?>
