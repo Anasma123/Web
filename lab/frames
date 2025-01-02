@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Frames Example</title>
+</head>
+<body>
+    <h1>Different Types of Frames</h1>
+    
+    <h2>Floating Frame</h2>
+    <iframe src="https://www.example.com" width="400" height="300" style="float:left; margin-right: 20px;" title="Floating Frame"></iframe>
+    <p>This is a floating frame.</p>
+    
+    <div style="clear:both;"></div>
+
+    <h2>Navigation Frame</h2>
+    <table style="width: 100%; height: 300px; border: 1px solid black;">
+        <tr>
+            <td style="width: 200px; background-color: #f4f4f4; vertical-align: top;">
+                <ul>
+                    <li><a href="https://www.example.com" target="contentFrame">Example 1</a></li>
+                    <li><a href="https://www.wikipedia.org" target="contentFrame">Wikipedia</a></li>
+                    <li><a href="https://www.google.com" target="contentFrame">Google</a></li>
+                </ul>
+            </td>
+            <td>
+                <iframe name="contentFrame" width="100%" height="300" title="Navigation Frame"></iframe>
+</td>
+        </tr>
+    </table>
+
+    <h2>Mixed Frame</h2>
+    <table style="width: 100%; height: 300px; border: 1px solid black;">
+        <tr>
+            <td style="width: 200px; background-color: #f4f4f4; vertical-align: top;">
+                <ul>
+                    <li><a href="https://www.example.com" target="mixedFrame">Example</a></li>
+                    <li><a href="https://www.wikipedia.org" target="mixedFrame">Wikipedia</a></li>
+                    <li><a href="https://www.google.com" target="mixedFrame">Google</a></li>
+                </ul>
+            </td>
+            <td>
+                <iframe name="mixedFrame" width="100%" height="300" title="Mixed Frame"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
