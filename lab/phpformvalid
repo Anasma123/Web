@@ -1,0 +1,65 @@
+<?php
+$name = $email = $gender = "";
+$nameErr = $emailErr = $genderErr = "";
+$formValid = true;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+        $formValid = false;
+    } else {
+        $name = test_input($_POST["name"]);
+    }
+
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+        $formValid = false;
+    } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+        $formValid = false;
+    } else {
+        $email = test_input($_POST["email"]);
+    }
+
+    if (empty($_POST["gender"])) {
+        $genderErr = "Gender is required";
+        $formValid = false;
+    } else {
+        $gender = test_input($_POST["gender"]);
+    }
+
+    if ($formValid) {
+        echo "Form submitted successfully!";
+    }
+}
+
+function test_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<h2>PHP Form Validation</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    Name: <input type="text" name="name" value="<?php echo $name;?>">
+    <span><?php echo $nameErr;?></span><br><br>
+    
+    E-mail: <input type="text" name="email" value="<?php echo $email;?>">
+    <span><?php echo $emailErr;?></span><br><br>
+    
+    Gender:
+    <input type="radio" name="gender" value="male" <?php if ($gender == "male") echo "checked";?> >Male
+    <input type="radio" name="gender" value="female" <?php if ($gender == "female") echo "checked";?> >Female
+    <span><?php echo $genderErr;?></span><br><br>
+    
+    <input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>
