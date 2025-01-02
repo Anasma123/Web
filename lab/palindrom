@@ -1,0 +1,13 @@
+<?php
+echo "Enter a number: ";
+$num = (int)trim(fgets(STDIN));
+$originalNum = $num;
+$reverse = 0;
+
+while ($num > 0) {
+    $reverse = $reverse * 10 + ($num % 10);
+    $num = (int)($num / 10);
+}
+
+echo $originalNum == $reverse ? "$originalNum is a palindrome." : "$originalNum is not a palindrome.";
+?>
