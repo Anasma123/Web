@@ -1,0 +1,39 @@
+<?php
+$players = array(
+    "Virat Kohli",
+    "Rohit Sharma",
+    "Shikhar Dhawan",
+    "KL Rahul",
+    "Hardik Pandya",
+    "Rishabh Pant",
+    "Jasprit Bumrah",
+    "Mohammad Shami",
+    "Ravindra Jadeja",
+    "Bhuvneshwar Kumar"
+);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Cricket Players</title>
+</head>
+<body>
+
+<h2>List of Indian Cricket Players</h2>
+
+<table border="1">
+    <tr>
+        <th>Player Name</th>
+    </tr>
+    <?php
+    foreach ($players as $player) {
+        echo "<tr><td>$player</td></tr>";
+    }
+    ?>
+</table>
+
+</body>
+</html>
