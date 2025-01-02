@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Mouse Hover Event</title>
@@ -5,34 +6,21 @@
 <body>
     <h1>Hover over the text below to see a new image and message</h1>
 
-    <p id="hoverContent" style="cursor: pointer; color: blue; font-size: 20px;">
+    <p id="hoverContent" style="cursor: pointer;">
         Hover over this text to see a new image and message.
     </p>
-
-    <div id="imageContainer"></div>
-    <div id="textContainer"></div>
+    <div id="content"></div>
 
     <script>
-        document.getElementById("hoverContent").addEventListener("mouseover", function() {
-            var newImage = document.createElement("img");
-            newImage.src = "https://via.placeholder.com/300";
-            newImage.alt = "New Image";
-            newImage.style.width = "300px";
-            newImage.style.height = "auto";
+        const hoverContent = document.getElementById("hoverContent");
+        const content = document.getElementById("content");
 
-            var newText = document.createElement("p");
-            newText.textContent = "You have hovered over the text! Here's a new image and message.";
+        hoverContent.onmouseover = () => {
+            content.innerHTML = `<img src="image.jpg">
+            <p>You have hovered over the text! Here's a new image and message.</p>`;
+        };
 
-            document.getElementById("imageContainer").innerHTML = "";
-            document.getElementById("imageContainer").appendChild(newImage);
-            document.getElementById("textContainer").innerHTML = "";
-            document.getElementById("textContainer").appendChild(newText);
-        });
-
-        document.getElementById("hoverContent").addEventListener("mouseout", function() {
-            document.getElementById("imageContainer").innerHTML = "";
-            document.getElementById("textContainer").innerHTML = "";
-        });
+        hoverContent.onmouseout = () => content.innerHTML = "";
     </script>
 </body>
 </html>
