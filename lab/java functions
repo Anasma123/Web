@@ -1,0 +1,69 @@
+<body>
+    <h1>String and Math Object Functions in JavaScript</h1>
+    
+    <h2>String Functions</h2>
+    <p><strong>Example of <code>length</code> function:</strong></p>
+    <p id="stringLength"></p>
+    <script>
+        var str = "Hello, World!";
+        document.getElementById("stringLength").innerHTML = str.length;
+    </script>
+
+    <p><strong>Example of <code>toUpperCase()</code> function:</strong></p>
+    <p id="toUpperCase"></p>
+    <script>
+        document.getElementById("toUpperCase").innerHTML = str.toUpperCase();
+    </script>
+
+    <p><strong>Example of <code>toLowerCase()</code> function:</strong></p>
+    <p id="toLowerCase"></p>
+    <script>
+        document.getElementById("toLowerCase").innerHTML = str.toLowerCase();
+    </script>
+
+    <p><strong>Example of <code>substring()</code> function:</strong></p>
+    <p id="substring"></p>
+    <script>
+        document.getElementById("substring").innerHTML = str.substring(0, 5);
+    </script>
+
+    <h2>Math Functions</h2>
+    <p><strong>Example of <code>Math.abs()</code> function:</strong></p>
+    <p id="abs"></p>
+    <script>
+        var num = -9.5;
+        document.getElementById("abs").innerHTML = Math.abs(num);
+    </script>
+
+    <p><strong>Example of <code>Math.max()</code> function:</strong></p>
+    <p id="max"></p>
+    <script>
+        document.getElementById("max").innerHTML = Math.max(1, 5, 10, 50, 20);
+    </script>
+
+    <p><strong>Example of <code>Math.min()</code> function:</strong></p>
+    <p id="min"></p>
+    <script>
+        document.getElementById("min").innerHTML = Math.min(1, 5, 10, 50, 20);
+    </script>
+
+    <p><strong>Example of <code>Math.random()</code> function:</strong></p>
+    <p id="random"></p>
+    <script>
+        document.getElementById("random").innerHTML = Math.random();
+    </script>
+
+    <p><strong>Example of <code>Math.floor()</code> function:</strong></p>
+    <p id="floor"></p>
+    <script>
+        var randNum = Math.random() * 100;
+        document.getElementById("floor").innerHTML = Math.floor(randNum);
+    </script>
+
+    <p><strong>Example of <code>Math.ceil()</code> function:</strong></p>
+    <p id="ceil"></p>
+    <script>
+        document.getElementById("ceil").innerHTML = Math.ceil(randNum);
+    </script>
+</body>
+</html>
