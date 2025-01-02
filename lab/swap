@@ -1,0 +1,19 @@
+<?php
+
+echo "Enter the first number: ";
+$num1 = (int)trim(fgets(STDIN));
+
+echo "Enter the second number: ";
+$num2 = (int)trim(fgets(STDIN));
+
+echo "\nBefore swapping: \n";
+echo "num1 = $num1, num2 = $num2\n";
+
+$temp = $num1;
+$num1 = $num2;
+$num2 = $temp;
+
+echo "\nAfter swapping: \n";
+echo "num1 = $num1, num2 = $num2\n";
+
+?>
