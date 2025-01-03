@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Calendar</title>
@@ -14,9 +15,9 @@
             let c = ""; 
             for (let m = 0; m < 12; m++) {
                 c += `<h3>${new Date(y, m).toLocaleString('default', { month: 'long' })}</h3><table><tr>${"SMTWTFS".split("").
-map(d => <th>${d}</th>).join("")}</tr><tr>`;
+map(d => `<th>${d}</th>`).join("")}</tr><tr>`;
                 for (let d = 1, s = new Date(y, m, 1).getDay(), t = new Date(y, m + 1, 0).getDate(); d <= t; d++) {
-                    c += (d === 1 ? "<td>".repeat(s) : "") + <td>${d}</td> + ((s + d) % 7 === 0 ? "</tr><tr>" : "");
+                    c += (d === 1 ? "<td>".repeat(s) : "") + `<td>${d}</td>` + ((s + d) % 7 === 0 ? "</tr><tr>" : "");
                 }
                 c += "</tr></table>";
             }
