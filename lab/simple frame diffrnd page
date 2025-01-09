@@ -1,0 +1,38 @@
+\\home//
+<html>
+<head>
+    <title>Document</title>
+</head>
+    <frameset cols="20%,80%">
+        <frame src="navigation.html">
+        <frameset rows="40%,*"> 
+            <frame src="mixed.html">
+            <frame src="floating.html">
+        </frameset>   
+    </frameset>
+</html>
+
+//flot frame\\
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>This is a floating frame</p>
+    <div><p>Floating framesss</p></div>
+</body>
+</html>
+
+\\van//
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Navigation Frame</h3><br>
+    <a href="home.html" target="contentframe">Home</a><br>
+    <a href="/Frame test/home.html" target="contentframe">Contacts</a><br>
+    <a href="https://www.wikipedia.orgl" target="contentframe">About</a><br>
+    <iframe name="contentframe"></iframe>
+</body>
+</html>
