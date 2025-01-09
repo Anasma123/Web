@@ -1,19 +1,26 @@
-<?php
+<html>
+  <head>
+    <title>Swap Two Numbers</title>
+  </head>
+  <body>
+    <h1>Swap Two Numbers</h1>
+    <form method="POST">
+      Enter the first number: <input type="number" name="num1" required><br><br>
+      Enter the second number: <input type="number" name="num2" required><br><br>
+      <input type="submit" value="Swap">
+    </form>
 
-echo "Enter the first number: ";
-$num1 = (int)trim(fgets(STDIN));
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $num1 = $_POST['num1'];
+      $num2 = $_POST['num2'];
 
-echo "Enter the second number: ";
-$num2 = (int)trim(fgets(STDIN));
+      echo "Before swapping: num1 = $num1, num2 = $num2<br>";
 
-echo "\nBefore swapping: \n";
-echo "num1 = $num1, num2 = $num2\n";
+      list($num1, $num2) = [$num2, $num1];
 
-$temp = $num1;
-$num1 = $num2;
-$num2 = $temp;
-
-echo "\nAfter swapping: \n";
-echo "num1 = $num1, num2 = $num2\n";
-
-?>
+      echo "After swapping: num1 = $num1, num2 = $num2";
+    }
+    ?>
+  </body>
+</html>
