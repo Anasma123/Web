@@ -36,3 +36,16 @@
     <iframe name="contentframe"></iframe>
 </body>
 </html>
+
+\\mixed\\
+
+<html>
+<head>
+    <title>Document</title>
+
+    <frameset cols="50%,50%">
+        <frame src="www.google.com">
+        <frame src="www.google.com">
+    </frameset>
+</head>
+</html>
