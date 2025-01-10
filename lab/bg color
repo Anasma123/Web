@@ -8,7 +8,7 @@
 
     <script>
         document.getElementById("colorButton").addEventListener("click", function() {
-            var colors = ["#FF5733", "#33FF57", "#3357FF", "#FFFF33", "#FF33FF", "#33FFFF"];
+            var colors = ["red", "green", "#3357FF", "#FFFF33", "#FF33FF", "#33FFFF"];
             var randomColor = colors[Math.floor(Math.random() * colors.length)];
             document.body.style.backgroundColor = randomColor;
         });
